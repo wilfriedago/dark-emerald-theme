@@ -3,6 +3,14 @@
 
 ### Bug Fixes
 
+* **ci:** add EDITOR environment variable to release workflow ([2bb2142](https://github.com/wilfriedago/dark-emerald-theme/commit/2bb214263a7161ca2ff5583bb11890d757e3eea0))
+* **ci:** enable GPG signing for tags and pushes ([ad7d927](https://github.com/wilfriedago/dark-emerald-theme/commit/ad7d927d88ed0a987ca42256bbf69525ce94d616))
+
+## [1.0.2](https://github.com/wilfriedago/dark-emerald-theme/compare/v1.0.1...v1.0.2) (2024-07-14)
+
+
+### Bug Fixes
+
 * **ci:** enable GPG signing for tags and pushes ([ad7d927](https://github.com/wilfriedago/dark-emerald-theme/commit/ad7d927d88ed0a987ca42256bbf69525ce94d616))
 
 ## [1.0.1](https://github.com/wilfriedago/dark-emerald-theme/compare/v1.0.0...v1.0.1) (2024-07-14)
