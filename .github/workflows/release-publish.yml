@@ -1,0 +1,86 @@
+name: Release
+
+on:
+  # Trigger the workflow on push on the main branch
+  push:
+    branches:
+      - main
+
+  # Allow manual triggering of the workflow
+  workflow_dispatch:
+
+permissions:
+  contents: read # for checkout
+
+concurrency:
+  group: ${{ github.job }}-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  STORE_PATH: ''
+  GIT_AUTHOR_NAME: 'Wilfried AGO'
+  GIT_AUTHOR_EMAIL: 'wilfriedago@pm.me'
+
+jobs:
+  release:
+    name: 🚀 Create a new release
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # to be able to publish a GitHub release
+      issues: write # to be able to comment on released issues
+      pull-requests: write # to be able to comment on released pull requests
+      id-token: write # to enable use of OIDC for npm provenance
+
+    steps:
+      - name: ⬇️ Checkout repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: 🛑 Configure Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: lts/*
+
+      - name: 🪄 Installing pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          run_install: false
+
+      - name: 🏪 Getting pnpm store directory
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+
+      - name: ♻️ Setting up pnpm cache
+        uses: actions/cache@v4
+        with:
+          path: ${{ env.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      - name: 📥 Installing project dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: 📦 Building package
+        run: pnpm package
+
+      - name: 🚀 Release a new version
+        run: pnpm release
+        env:
+          GITHUB_TOKEN: ${{ env.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: 🌐 Publish to Open VSX Registry
+        uses: HaaLeo/publish-vscode-extension@v1
+        with:
+          pat: ${{ secrets.OPEN_VSX_TOKEN }}
+          extensionFile: ./dist/dark-emerald-theme.vsix
+
+      - name: 🌐 Publish to Visual Studio Marketplace
+        uses: HaaLeo/publish-vscode-extension@v1
+        with:
+          pat: ${{ secrets.VS_MARKETPLACE_TOKEN }}
+          registryUrl: https://marketplace.visualstudio.com
+          extensionFile: ./dist/dark-emerald-theme.vsix

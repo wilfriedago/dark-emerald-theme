@@ -1,25 +1,37 @@
 {
   "name": "dark-emerald-theme",
   "displayName": "Dark Emerald Theme",
-  "description": "Another dark and minimalist theme for Visual Studio Code",
-  "version": "1.1.0",
-  "publisher": "wilfriedago",
-  "license": "Apache-2.0",
-  "scripts": {
-    "release": "yes | vsce publish $BUMP --no-git-tag-version"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/wilfriedago/vscode-dark-emerald-theme"
-  },
-  "author": {
-    "name": "Wilfried AGO",
-    "url": "https://www.wilfriedago.dev"
-  },
-  "icon": "media/icon.png",
+  "version": "0.0.1",
+  "description": "Another minimalist dark theme for Visual Studio Code",
   "categories": [
     "Themes"
   ],
+  "keywords": [
+    "Theme",
+    "Dark Theme",
+    "Minimalist Theme"
+  ],
+  "homepage": "https://github.com/wilfriedago/dark-emerald-theme/blob/main/README.md",
+  "bugs": {
+    "url": "https://github.com/wilfriedago/dark-emerald-theme/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wilfriedago/dark-emerald-theme"
+  },
+  "license": "Apache-2.0",
+  "author": {
+    "name": "Wilfried AGO",
+    "email": "wilfriedago@pm.me",
+    "url": "https://www.wilfriedago.dev"
+  },
+  "publisher": "wilfriedago",
+  "scripts": {
+    "release": "semantic-release --help",
+    "prepackage": "mkdir -p dist",
+    "package": "vsce package --out dist/dark-emerald-theme.vsix",
+    "publish": "vsce publish"
+  },
   "contributes": {
     "themes": [
       {
@@ -30,19 +42,19 @@
       }
     ]
   },
-  "engines": {
-    "vscode": "^1.45.0"
+  "devDependencies": {
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "@vscode/vsce": "^2.30.0",
+    "semantic-release": "^24.0.0"
   },
-  "keywords": [
-    "Theme",
-    "Dark Theme",
-    "Minimalist Theme"
-  ],
+  "packageManager": "pnpm@9.5.0+sha512.140036830124618d624a2187b50d04289d5a087f326c9edfc0ccd733d76c4f52c3a313d4fc148794a2a9d81553016004e6742e8cf850670268a7387fc220c903",
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "icon": "assets/icon.png",
   "galleryBanner": {
     "color": "#000000",
     "theme": "dark"
-  },
-  "devDependencies": {
-    "vsce": "^2.7.0"
   }
 }

@@ -1,0 +1,10 @@
+.vscode/**
+.vscode-test/**
+.github/
+.gitignore
+.releaserc
+demo/
+/node_modules/
+/pnpm-lock.yaml
+/src/
+/dist/
