@@ -1,0 +1,48 @@
+{
+  "name": "dark-emerald-theme",
+  "displayName": "Dark Emerald Theme",
+  "description": "Another dark and minimalist theme for Visual Studio Code",
+  "version": "1.1.0",
+  "publisher": "wilfriedago",
+  "license": "Apache-2.0",
+  "scripts": {
+    "release": "yes | vsce publish $BUMP --no-git-tag-version"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wilfriedago/vscode-dark-emerald-theme"
+  },
+  "author": {
+    "name": "Wilfried AGO",
+    "url": "https://www.wilfriedago.dev"
+  },
+  "icon": "media/icon.png",
+  "categories": [
+    "Themes"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "id": "dark-emerald",
+        "label": "Dark Emerald",
+        "uiTheme": "vs-dark",
+        "path": "./themes/dark-emerald.json"
+      }
+    ]
+  },
+  "engines": {
+    "vscode": "^1.45.0"
+  },
+  "keywords": [
+    "Theme",
+    "Dark Theme",
+    "Minimalist Theme"
+  ],
+  "galleryBanner": {
+    "color": "#000000",
+    "theme": "dark"
+  },
+  "devDependencies": {
+    "vsce": "^2.7.0"
+  }
+}
