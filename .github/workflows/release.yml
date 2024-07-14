@@ -11,8 +11,10 @@ on:
       - "CHANGELOG.md"
       - "CONTRIBUTING.md"
       - ".editorconfig"
-      - ".github/workflows/publish.yml"
       - "demo/**"
+      - "assets/**"
+      - ".vscode/**"
+      - ".github/workflows/publish.yml"
 
   # Allow manual triggering of the workflow
   workflow_dispatch:
@@ -30,8 +32,8 @@ concurrency:
 
 env:
   STORE_PATH: ""
-  GIT_AUTHOR_NAME: "Wilfried AGO"
-  GIT_AUTHOR_EMAIL: "wilfriedago@pm.me"
+  GIT_COMMITTER_NAME: "Wilfried AGO"
+  GIT_COMMITTER_EMAIL: "wilfriedago@pm.me"
 
 jobs:
   release:
@@ -76,6 +78,16 @@ jobs:
 
       - name: 📦 Building package
         run: pnpm package
+
+      - name: 📝 Import GPG key
+        uses: crazy-max/ghaction-import-gpg@v6
+        with:
+          gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
+          git_committer_name: ${{ env.GIT_COMMITTER_NAME }}
+          git_committer_email: ${{ env.GIT_COMMITTER_EMAIL }}
+          git_user_signingkey: true
+          git_commit_gpgsign: true
+          trust_level: ultimate
 
       - name: 🚀 Release a new version
         run: pnpm release
