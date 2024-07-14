@@ -13,8 +13,8 @@
         "assets": [
           {
             "path": "dark-emerald-theme.vsix",
-            "name": "dark-emerald-theme-${nextRelease.gitTag}",
-            "label": "Dark Emerald Theme (${nextRelease.gitTag})"
+            "label": "Dark Emerald Theme ${nextRelease.gitTag}",
+            "name": "dark-emerald-theme-${nextRelease.gitTag}.vsix"
           }
         ]
       }
