@@ -32,6 +32,7 @@ concurrency:
 
 env:
   STORE_PATH: ""
+  EDITOR: true
   GIT_COMMITTER_NAME: "Wilfried AGO"
   GIT_COMMITTER_EMAIL: "wilfriedago@pm.me"
 
