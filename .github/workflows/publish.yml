@@ -1,10 +1,10 @@
 name: Publish
 
 on:
-  # Trigger the workflow on new tag release
-  push:
-    tags:
-      - "*"
+  # Trigger the workflow on release creation
+  release:
+    types:
+      - created
 
   # Allow manual triggering of the workflow
   workflow_dispatch:
@@ -61,7 +61,7 @@ jobs:
       - name: 📥 Installing project dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: 📦 Building package
+      - name: 📦 Packaging
         run: pnpm package
 
       - name: 🔍 Getting metadata

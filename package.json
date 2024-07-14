@@ -35,7 +35,7 @@
   "publisher": "wilfriedago",
   "scripts": {
     "commit": "git-cz",
-    "package": "vsce package",
+    "package": "vsce package -o dark-emerald-theme.vsix",
     "prepare": "husky",
     "publish": "vsce publish",
     "release": "semantic-release"

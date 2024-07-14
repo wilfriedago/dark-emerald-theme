@@ -12,8 +12,9 @@
       {
         "assets": [
           {
-            "label": "Dark Emerald Theme",
-            "path": "dark-emerald-theme-${nextRelease.version}.vsix"
+            "path": "dark-emerald-theme.vsix",
+            "name": "dark-emerald-theme-${nextRelease.gitTag}",
+            "label": "Dark Emerald Theme (${nextRelease.gitTag})"
           }
         ]
       }
