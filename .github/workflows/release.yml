@@ -5,6 +5,14 @@ on:
   push:
     branches:
       - main
+    paths-ignore:
+      - "LICENSE"
+      - "README.md"
+      - "CHANGELOG.md"
+      - "CONTRIBUTING.md"
+      - ".editorconfig"
+      - ".github/workflows/publish.yml"
+      - "demo/**"
 
   # Allow manual triggering of the workflow
   workflow_dispatch:
@@ -21,9 +29,9 @@ concurrency:
   cancel-in-progress: true
 
 env:
-  STORE_PATH: ''
-  GIT_AUTHOR_NAME: 'Wilfried AGO'
-  GIT_AUTHOR_EMAIL: 'wilfriedago@pm.me'
+  STORE_PATH: ""
+  GIT_AUTHOR_NAME: "Wilfried AGO"
+  GIT_AUTHOR_EMAIL: "wilfriedago@pm.me"
 
 jobs:
   release:
