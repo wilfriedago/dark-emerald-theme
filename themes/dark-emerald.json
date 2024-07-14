@@ -51,6 +51,7 @@
     "editor.background": "#1F1F1F",
     "editor.findMatchBackground": "#9E6A03",
     "editor.foreground": "#CCCCCC",
+    "editor.selectionBackground": "#064e3b",
 
     "editorError.foreground": "#f48771",
 
@@ -124,6 +125,8 @@
     "notifications.background": "#1F1F1F",
     "notifications.border": "#2B2B2B",
     "notifications.foreground": "#CCCCCC",
+
+    "list.activeSelectionBackground": "#022c22",
 
     "panel.background": "#181818",
     "panel.border": "#2B2B2B",
