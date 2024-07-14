@@ -25,12 +25,18 @@
     "email": "wilfriedago@pm.me",
     "url": "https://www.wilfriedago.dev"
   },
+  "contributors": [
+    {
+      "name": "Wilfried AGO",
+      "email": "wilfriedago@pm.me",
+      "url": "https://www.wilfriedago.dev"
+    }
+  ],
   "publisher": "wilfriedago",
   "scripts": {
-    "release": "semantic-release",
-    "prepackage": "mkdir -p dist",
-    "package": "vsce package --out dist/dark-emerald-theme.vsix",
-    "publish": "vsce publish"
+    "package": "vsce package",
+    "publish": "vsce publish",
+    "release": "semantic-release"
   },
   "contributes": {
     "themes": [

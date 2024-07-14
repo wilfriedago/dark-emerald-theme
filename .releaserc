@@ -13,7 +13,7 @@
         "assets": [
           {
             "label": "Dark Emerald Theme",
-            "path": "dist/dark-emerald-theme.vsix"
+            "path": "dark-emerald-theme-${nextRelease.version}.vsix"
           }
         ]
       }

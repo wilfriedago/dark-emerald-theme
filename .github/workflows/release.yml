@@ -1,4 +1,4 @@
-name: Release & Publish
+name: Release
 
 on:
   # Trigger the workflow on push on the main branch
@@ -8,6 +8,10 @@ on:
 
   # Allow manual triggering of the workflow
   workflow_dispatch:
+
+defaults:
+  run:
+    shell: bash
 
 permissions:
   contents: read # for checkout
@@ -38,7 +42,7 @@ jobs:
           fetch-depth: 0
 
       - name: 🛑 Configure Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: lts/*
 
@@ -48,7 +52,6 @@ jobs:
           run_install: false
 
       - name: 🏪 Getting pnpm store directory
-        shell: bash
         run: |
           echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
 
@@ -70,16 +73,3 @@ jobs:
         run: pnpm release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: 🌐 Publish to Open VSX Registry
-        uses: HaaLeo/publish-vscode-extension@v1
-        with:
-          pat: ${{ secrets.OPEN_VSX_TOKEN }}
-          extensionFile: ./dist/dark-emerald-theme.vsix
-
-      - name: 🌐 Publish to Visual Studio Marketplace
-        uses: HaaLeo/publish-vscode-extension@v1
-        with:
-          pat: ${{ secrets.VS_MARKETPLACE_TOKEN }}
-          registryUrl: https://marketplace.visualstudio.com
-          extensionFile: ./dist/dark-emerald-theme.vsix
