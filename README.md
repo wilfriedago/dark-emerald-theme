@@ -1,4 +1,4 @@
-<div align="center"><img src="./assets/logo.png" width="120" alt="CodeSandbox Theme Logo" />
+<div align="center"><img src="./assets/icon.png" width="120" alt="CodeSandbox Theme Logo" />
   <h1 align="center">Dark Emerald Theme</h1>
   <p align="center">Another minimalist dark theme for Visual Studio Code, inspired by <a href="https://marketplace.visualstudio.com/items?itemName=CodeSandbox-io.codesandbox-projects-theme">Code Sandbox Theme</a>.</p>
 </div>
