@@ -15,7 +15,7 @@ Below you can find a few recommendations for your `settings.json` to match the p
 
 ```json
 {
-  "editor.fontSize": 14,
+  "editor.fontSize": 13,
   "editor.fontFamily": "'JetBrains Mono'",
   "editor.fontLigatures": true
 }
