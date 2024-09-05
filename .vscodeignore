@@ -1,3 +1,4 @@
+.husky/**
 .vscode/**
 .vscode-test/**
 .github/
@@ -8,3 +9,4 @@ demo/
 /pnpm-lock.yaml
 /src/
 /dist/
+.nvmrc
