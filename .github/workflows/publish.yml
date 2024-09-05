@@ -45,11 +45,17 @@ jobs:
           echo "PACKAGE_NAME=$(node -p -e "require('./package.json').name")" >> $GITHUB_ENV
           echo "PACKAGE_VERSION=$(node -p -e "require('./package.json').version")" >> $GITHUB_ENV
 
+      - uses: robinraju/release-downloader@v1
+        with:
+          tag: v${{ env.PACKAGE_VERSION }}
+
+          fileName: ${{ env.PACKAGE_NAME }}-v${{ env.PACKAGE_VERSION }}.vsix
+
       - name: 🌐 Publish to Open VSX Registry
         uses: HaaLeo/publish-vscode-extension@v1
         with:
           pat: ${{ secrets.OPEN_VSX_TOKEN }}
-          extensionFile: https://github.com/wilfriedago/dark-emerald-theme/releases/download/v${{ env.PACKAGE_VERSION }}/${{ env.PACKAGE_NAME }}-v${{ env.PACKAGE_VERSION }}.vsix
+          extensionFile: ${{ env.PACKAGE_NAME }}-v${{ env.PACKAGE_VERSION }}.vsix
           skipDuplicate: true
 
       - name: 🌐 Publish to Visual Studio Marketplace
@@ -57,5 +63,5 @@ jobs:
         with:
           pat: ${{ secrets.VS_MARKETPLACE_TOKEN }}
           registryUrl: https://marketplace.visualstudio.com
-          extensionFile: https://github.com/wilfriedago/dark-emerald-theme/releases/download/v${{ env.PACKAGE_VERSION }}/${{ env.PACKAGE_NAME }}-v${{ env.PACKAGE_VERSION }}.vsix
+          extensionFile: ${{ env.PACKAGE_NAME }}-v${{ env.PACKAGE_VERSION }}.vsix
           skipDuplicate: true
