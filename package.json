@@ -23,19 +23,19 @@
   "author": {
     "name": "Wilfried AGO",
     "email": "wilfriedago@pm.me",
-    "url": "https://www.wilfriedago.dev"
+    "url": "https://wilfriedago.dev"
   },
   "contributors": [
     {
       "name": "Wilfried AGO",
       "email": "wilfriedago@pm.me",
-      "url": "https://www.wilfriedago.dev"
+      "url": "https://wilfriedago.dev"
     }
   ],
   "publisher": "wilfriedago",
   "scripts": {
     "commit": "git-cz",
-    "package": "vsce package -o dark-emerald-theme.vsix",
+    "package": "vsce package",
     "prepare": "husky",
     "publish": "vsce publish",
     "release": "semantic-release"
@@ -60,7 +60,7 @@
     "husky": "^9.1.5",
     "semantic-release": "^24.1.0"
   },
-  "packageManager": "pnpm@9.5.0+sha512.140036830124618d624a2187b50d04289d5a087f326c9edfc0ccd733d76c4f52c3a313d4fc148794a2a9d81553016004e6742e8cf850670268a7387fc220c903",
+  "packageManager": "pnpm@9.9.0+sha512.60c18acd138bff695d339be6ad13f7e936eea6745660d4cc4a776d5247c540d0edee1a563695c183a66eb917ef88f2b4feb1fc25f32a7adcadc7aaf3438e99c1",
   "engines": {
     "vscode": "^1.90.0"
   },
@@ -68,5 +68,34 @@
   "galleryBanner": {
     "color": "#000000",
     "theme": "dark"
+  },
+  "release": {
+    "branches": [
+      "main"
+    ],
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/changelog",
+      "@semantic-release/git",
+      [
+        "@semantic-release/npm",
+        {
+          "npmPublish": false
+        }
+      ],
+      [
+        "@semantic-release/github",
+        {
+          "assets": [
+            {
+              "label": "Dark Emerald Theme ${nextRelease.gitTag}",
+              "name": "dark-emerald-theme-${nextRelease.gitTag}.vsix",
+              "path": "dark-emerald-theme-${nextRelease.gitTag}.vsix"
+            }
+          ]
+        }
+      ]
+    ]
   }
 }
