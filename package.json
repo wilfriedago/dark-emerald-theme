@@ -69,6 +69,11 @@
     "color": "#000000",
     "theme": "dark"
   },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
   "release": {
     "branches": [
       "main"
