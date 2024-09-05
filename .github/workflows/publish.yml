@@ -26,8 +26,8 @@ concurrency:
   cancel-in-progress: true
 
 env:
-  STORE_PATH: ''
   PACKAGE_NAME: ''
+  PACKAGE_VERSION: ''
 
 jobs:
   publish:
@@ -40,41 +40,16 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: 🛑 Configure Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: lts/*
-
-      - name: 🪄 Installing pnpm
-        uses: pnpm/action-setup@v4
-        with:
-          run_install: false
-
-      - name: 🏪 Getting pnpm store directory
-        run: echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
-
-      - name: ♻️ Setting up pnpm cache
-        uses: actions/cache@v4
-        with:
-          path: ${{ env.STORE_PATH }}
-          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-pnpm-store-
-
-      - name: 📥 Installing project dependencies
-        run: pnpm install --frozen-lockfile
-
-      - name: 📦 Packaging
-        run: pnpm package
-
-      - name: 🔍 Getting package name
-        run: echo "PACKAGE_NAME=$(node -p -e "require('./package.json').name")" >> $GITHUB_ENV
+      - name: 🔍 Getting package name & version
+        run: |
+          echo "PACKAGE_NAME=$(node -p -e "require('./package.json').name")" >> $GITHUB_ENV
+          echo "PACKAGE_VERSION=$(node -p -e "require('./package.json').version")" >> $GITHUB_ENV
 
       - name: 🌐 Publish to Open VSX Registry
         uses: HaaLeo/publish-vscode-extension@v1
         with:
           pat: ${{ secrets.OPEN_VSX_TOKEN }}
-          extensionFile: ${{ env.PACKAGE_NAME }}.vsix
+          extensionFile: https://github.com/wilfriedago/dark-emerald-theme/releases/download/v${{ env.PACKAGE_VERSION }}/${{ env.PACKAGE_NAME }}-v${{ env.PACKAGE_VERSION }}.vsix
           skipDuplicate: true
 
       - name: 🌐 Publish to Visual Studio Marketplace
@@ -82,5 +57,5 @@ jobs:
         with:
           pat: ${{ secrets.VS_MARKETPLACE_TOKEN }}
           registryUrl: https://marketplace.visualstudio.com
-          extensionFile: ${{ env.PACKAGE_NAME }}.vsix
+          extensionFile: https://github.com/wilfriedago/dark-emerald-theme/releases/download/v${{ env.PACKAGE_VERSION }}/${{ env.PACKAGE_NAME }}-v${{ env.PACKAGE_VERSION }}.vsix
           skipDuplicate: true

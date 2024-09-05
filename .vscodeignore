@@ -9,3 +9,4 @@ demo/
 /pnpm-lock.yaml
 /src/
 /dist/
+.nvmrc
