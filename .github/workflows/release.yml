@@ -54,7 +54,6 @@ jobs:
       - name: 🪄 Installing pnpm
         uses: pnpm/action-setup@v4
         with:
-          version: 9
           run_install: false
 
       - name: 🛑 Configure Node.js
