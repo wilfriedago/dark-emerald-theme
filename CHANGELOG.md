@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/wilfriedago/dark-emerald-theme/compare/v1.0.2...v1.1.0) (2024-09-05)
+
+
+### Features
+
+* add italics rules ([3d9fcd0](https://github.com/wilfriedago/dark-emerald-theme/commit/3d9fcd08d11134da0d74f96e80d5a94c8fc334bc))
+
 ## [1.0.2](https://github.com/wilfriedago/dark-emerald-theme/compare/v1.0.1...v1.0.2) (2024-07-14)
 
 
