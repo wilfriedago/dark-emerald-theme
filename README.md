@@ -16,12 +16,12 @@ Below you can find a few recommendations for your `settings.json` to match the p
 ```json
 {
   "editor.fontSize": 13,
-  "editor.fontFamily": "'Dank Mono'",
+  "editor.fontFamily": "'Dank Mono', Menlo, Monaco, Consolas, 'Courier New', monospace",
   "editor.fontLigatures": true
 }
 ```
 
-- You can download the Dank Mono font [here](https://philpl.gumroad.com/l/dank-mono).
+- Dank Mono is a paid font; you can purchase it [here](https://philpl.gumroad.com/l/dank-mono). For a free alternative, consider [JetBrains Mono](https://www.jetbrains.com/lp/mono/).
 - The icon theme used in the preview is [Material Icon Theme](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme).
 - The product icon theme used in the preview is [Material Product Icons](https://marketplace.visualstudio.com/items?itemName=PKief.material-product-icons).
 - For further customization, you can use the [Custom UI Style](https://marketplace.visualstudio.com/items?itemName=subframe7536.custom-ui-style).
