@@ -1,6 +1,12 @@
 {
-  "name": "Dark Emerald",
   "$schema": "vscode://schemas/color-theme",
+  "type": "dark",
+  "name": "Dark Emerald",
+  "semanticHighlighting": true,
+  "semanticTokenColors": {
+    "class.defaultLibrary": "#a390ff",
+    "function.defaultLibrary": "#a390ff"
+  },
   "colors": {
     "activityBar.activeBackground": "#151515",
     "activityBar.activeBorder": "#059669",
@@ -164,73 +170,38 @@
     "widget.border": "#313131",
     "widget.shadow": "#0000005c"
   },
-  "semanticHighlighting": true,
-  "semanticTokenColors": {
-    "class.defaultLibrary": "#a390ff",
-    "function.defaultLibrary": "#a390ff"
-  },
   "tokenColors": [
     {
-      "name": "Forced Italic Rules",
-      "scope": [
-        "markup.changed",
-        "meta.diff.header.git",
-        "meta.diff.header.from-file",
-        "meta.diff.header.to-file",
-        "markup.deleted.diff",
-        "markup.inserted.diff",
-        "comment",
-        "punctuation.accessor",
-        "storage",
-        "meta.var.expr",
-        "meta.class meta.method.declaration meta.var.expr storage.type.js",
-        "storage.type.property.js",
-        "storage.type.property.ts",
-        "storage.type.property.tsx",
-        "entity.name.function",
-        "entity.other.attribute-name",
-        "keyword.operator.relational",
-        "meta.delimiter.period",
-        "meta.selector",
-        "entity.name.tag.doctype",
-        "meta.tag.sgml.doctype",
-        "variable.other.object.property",
-        "entity.name.function",
-        "keyword.control.flow.js",
-        "keyword.control.flow.ts",
-        "keyword.control.flow.tsx",
-        "keyword.control.ruby",
-        "keyword.control.module.ruby",
-        "keyword.control.class.ruby",
-        "keyword.control.def.ruby",
-        "keyword.control.loop.js",
-        "keyword.control.loop.ts",
-        "keyword.control.import.js",
-        "keyword.control.import.ts",
-        "keyword.control.import.tsx",
-        "keyword.control.from.js",
-        "keyword.control.from.ts",
-        "keyword.control.from.tsx",
-        "italic",
-        "quote",
-        "source.elixir .punctuation.binary.elixir",
-        "source.go keyword.package.go",
-        "source.go keyword.import.go",
-        "source.go keyword.function.go",
-        "source.go keyword.type.go",
-        "source.go keyword.struct.go",
-        "source.go keyword.interface.go",
-        "source.go keyword.const.go",
-        "source.go keyword.var.go",
-        "source.go keyword.map.go",
-        "source.go keyword.channel.go",
-        "source.go keyword.control.go",
-        "meta.tag.sgml.doctype.html",
-        "variable.other.object.js",
-        "markup.italic.markdown",
-        "markup.quote.markdown",
-        "keyword.control"
-      ],
+      "name": "Comments",
+      "scope": "comment, punctuation.definition.comment",
+      "settings": {
+        "fontStyle": "italic"
+      }
+    },
+    {
+      "name": "js/ts italic",
+      "scope": "entity.other.attribute-name.js,entity.other.attribute-name.ts,entity.other.attribute-name.jsx,entity.other.attribute-name.tsx,variable.parameter,variable.language.super",
+      "settings": {
+        "fontStyle": "italic"
+      }
+    },
+    {
+      "name": "comment",
+      "scope": "comment.line.double-slash,comment.block.documentation",
+      "settings": {
+        "fontStyle": "italic"
+      }
+    },
+    {
+      "name": "markup.italic.markdown",
+      "scope": "markup.italic.markdown",
+      "settings": {
+        "fontStyle": "italic"
+      }
+    },
+    {
+      "name": "js meta object",
+      "scope": "meta.object-literal.key,support.variable.property,support.variable.object.process,support.variable.object.node",
       "settings": {
         "fontStyle": "italic"
       }
@@ -1061,6 +1032,5 @@
         "foreground": "#A390FF"
       }
     }
-  ],
-  "type": "dark"
+  ]
 }
