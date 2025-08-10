@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/wilfriedago/dark-emerald-theme/compare/v1.1.0...v1.2.0) (2025-08-10)
+
+
+### Features
+
+* add italics theme variant, and update the theme with less italics characters ([#3](https://github.com/wilfriedago/dark-emerald-theme/issues/3)) ([4891b09](https://github.com/wilfriedago/dark-emerald-theme/commit/4891b0980301b32e31c290f5cee619e9363ae6b7))
+
 # [1.1.0](https://github.com/wilfriedago/dark-emerald-theme/compare/v1.0.2...v1.1.0) (2024-09-05)
 
 
