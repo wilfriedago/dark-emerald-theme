@@ -22,7 +22,7 @@
   "license": "Apache-2.0",
   "author": {
     "name": "Wilfried AGO",
-    "email": "wilfriedago@pm.me",
+    "email": "hi@wilfriedago.me",
     "url": "https://wilfriedago.me"
   },
   "contributors": [
@@ -51,16 +51,16 @@
     ]
   },
   "devDependencies": {
-    "@commitlint/cli": "^19.4.1",
-    "@commitlint/config-conventional": "^19.4.1",
+    "@commitlint/cli": "^19.8.1",
+    "@commitlint/config-conventional": "^19.8.1",
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
-    "@vscode/vsce": "^3.0.0",
-    "commitizen": "^4.3.0",
-    "husky": "^9.1.5",
-    "semantic-release": "^24.1.0"
+    "@vscode/vsce": "^3.6.0",
+    "commitizen": "^4.3.1",
+    "husky": "^9.1.7",
+    "semantic-release": "^24.2.7"
   },
-  "packageManager": "pnpm@9.9.0+sha512.60c18acd138bff695d339be6ad13f7e936eea6745660d4cc4a776d5247c540d0edee1a563695c183a66eb917ef88f2b4feb1fc25f32a7adcadc7aaf3438e99c1",
+  "packageManager": "pnpm@10.14.0+sha512.ad27a79641b49c3e481a16a805baa71817a04bbe06a38d17e60e2eaee83f6a146c6a688125f5792e48dd5ba30e7da52a5cda4c3992b9ccf333f9ce223af84748",
   "engines": {
     "vscode": "^1.90.0"
   },
