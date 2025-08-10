@@ -48,7 +48,6 @@ jobs:
       - uses: robinraju/release-downloader@v1
         with:
           tag: v${{ env.PACKAGE_VERSION }}
-
           fileName: ${{ env.PACKAGE_NAME }}-v${{ env.PACKAGE_VERSION }}.vsix
 
       - name: 🌐 Publish to Open VSX Registry

@@ -30,11 +30,6 @@ concurrency:
   group: ${{ github.job }}-${{ github.ref }}
   cancel-in-progress: true
 
-env:
-  EDITOR: true
-  GIT_COMMITTER_NAME: "Wilfried AGO"
-  GIT_COMMITTER_EMAIL: "68906789+wilfriedago@users.noreply.github.com"
-
 jobs:
   release:
     name: 🚀 Create a new release
@@ -67,16 +62,6 @@ jobs:
 
       - name: 📦 Building package
         run: pnpm package
-
-      - name: 📝 Import GPG key
-        uses: crazy-max/ghaction-import-gpg@v6
-        with:
-          gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
-          git_committer_name: ${{ env.GIT_COMMITTER_NAME }}
-          git_committer_email: ${{ env.GIT_COMMITTER_EMAIL }}
-          git_user_signingkey: true
-          git_commit_gpgsign: true
-          trust_level: ultimate
 
       - name: 🚀 Release a new version
         run: pnpm release
