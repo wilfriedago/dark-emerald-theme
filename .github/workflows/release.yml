@@ -33,7 +33,7 @@ concurrency:
 env:
   EDITOR: true
   GIT_COMMITTER_NAME: "Wilfried AGO"
-  GIT_COMMITTER_EMAIL: "wilfriedago@pm.me"
+  GIT_COMMITTER_EMAIL: "68906789+wilfriedago@users.noreply.github.com"
 
 jobs:
   release:
