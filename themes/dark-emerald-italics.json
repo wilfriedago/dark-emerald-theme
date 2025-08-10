@@ -1,7 +1,7 @@
 {
   "$schema": "vscode://schemas/color-theme",
   "type": "dark",
-  "name": "Dark Emerald",
+  "name": "Dark Emerald Italics",
   "semanticHighlighting": true,
   "semanticTokenColors": {
     "class.defaultLibrary": "#a390ff",
@@ -171,6 +171,41 @@
     "widget.shadow": "#0000005c"
   },
   "tokenColors": [
+    {
+      "name": "Comments",
+      "scope": "comment, punctuation.definition.comment",
+      "settings": {
+        "fontStyle": "italic"
+      }
+    },
+    {
+      "name": "js/ts italic",
+      "scope": "entity.other.attribute-name.js,entity.other.attribute-name.ts,entity.other.attribute-name.jsx,entity.other.attribute-name.tsx,variable.parameter,variable.language.super",
+      "settings": {
+        "fontStyle": "italic"
+      }
+    },
+    {
+      "name": "comment",
+      "scope": "comment.line.double-slash,comment.block.documentation",
+      "settings": {
+        "fontStyle": "italic"
+      }
+    },
+    {
+      "name": "markup.italic.markdown",
+      "scope": "markup.italic.markdown",
+      "settings": {
+        "fontStyle": "italic"
+      }
+    },
+    {
+      "name": "js meta object",
+      "scope": "meta.object-literal.key,support.variable.property,support.variable.object.process,support.variable.object.node",
+      "settings": {
+        "fontStyle": "italic"
+      }
+    },
     {
       "name": "string",
       "scope": [
