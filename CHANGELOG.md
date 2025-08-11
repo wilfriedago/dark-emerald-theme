@@ -1,3 +1,7 @@
+## <small>1.2.3 (2025-08-11)</small>
+
+* fix: update semantic-release configuration to enable npm publishing ([b5402ec](https://github.com/wilfriedago/dark-emerald-theme/commit/b5402ec))
+
 ## <small>1.2.2 (2025-08-11)</small>
 
 * fix: update package script and semantic-release configuration for better output and changelog manage ([7362a26](https://github.com/wilfriedago/dark-emerald-theme/commit/7362a26))
