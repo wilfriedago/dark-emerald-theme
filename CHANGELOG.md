@@ -1,3 +1,18 @@
+## <small>1.2.3 (2025-08-11)</small>
+
+* fix: add npm plugin to semantic-release configuration to disable npm publishing ([c52f582](https://github.com/wilfriedago/dark-emerald-theme/commit/c52f582))
+* fix: correct VSIX file naming and update publish action version ([84859dc](https://github.com/wilfriedago/dark-emerald-theme/commit/84859dc))
+* fix: correct VSIX file naming in publish workflow ([0f63158](https://github.com/wilfriedago/dark-emerald-theme/commit/0f63158))
+* fix: improve formatting and structure of commitlint and semantic-release configurations ([43caa7e](https://github.com/wilfriedago/dark-emerald-theme/commit/43caa7e))
+* fix: revert version number to 1.2.2 in package.json ([ad9ca46](https://github.com/wilfriedago/dark-emerald-theme/commit/ad9ca46))
+* fix: update prepare script to conditionally run husky and add is-ci dependency ([fcea895](https://github.com/wilfriedago/dark-emerald-theme/commit/fcea895))
+* fix: update semantic-release configuration to disable npm publishing ([bd12722](https://github.com/wilfriedago/dark-emerald-theme/commit/bd12722))
+* fix: update semantic-release configuration to enable npm publishing ([b5402ec](https://github.com/wilfriedago/dark-emerald-theme/commit/b5402ec))
+* fix: update tokenColors to include additional comment scopes for italics ([032a7bc](https://github.com/wilfriedago/dark-emerald-theme/commit/032a7bc))
+* chore(release): 1.2.3 [skip ci] ([4b361ec](https://github.com/wilfriedago/dark-emerald-theme/commit/4b361ec))
+* chore(release): 1.2.3 [skip ci] ([85ed9a0](https://github.com/wilfriedago/dark-emerald-theme/commit/85ed9a0))
+* chore(release): 1.2.3 [skip ci] ([1b2ab78](https://github.com/wilfriedago/dark-emerald-theme/commit/1b2ab78))
+
 ## <small>1.2.2 (2025-08-11)</small>
 
 * fix: update package script and semantic-release configuration for better output and changelog manage ([7362a26](https://github.com/wilfriedago/dark-emerald-theme/commit/7362a26))
