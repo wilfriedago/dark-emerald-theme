@@ -79,9 +79,18 @@
       "@commitlint/config-conventional"
     ],
     "rules": {
-      "header-max-length": [1, "always"],
-      "body-max-line-length": [1, "always"],
-      "footer-max-line-length": [1, "always"]
+      "header-max-length": [
+        1,
+        "always"
+      ],
+      "body-max-line-length": [
+        1,
+        "always"
+      ],
+      "footer-max-line-length": [
+        1,
+        "always"
+      ]
     }
   },
   "release": {
@@ -94,21 +103,61 @@
         {
           "preset": "conventionalcommits",
           "releaseRules": [
-            { "type": "feat", "release": "minor" },
-            { "type": "fix", "release": "patch" },
-            { "type": "perf", "release": "patch" },
-            { "type": "docs", "release": "patch" },
-            { "type": "style", "release": "patch" },
-            { "type": "refactor", "release": "patch" },
-            { "type": "test", "release": false },
-            { "type": "build", "release": false },
-            { "type": "ci", "release": false },
-            { "type": "chore", "release": false },
-            { "type": "revert", "release": "patch" },
-            { "breaking": true, "release": "major" }
+            {
+              "type": "feat",
+              "release": "minor"
+            },
+            {
+              "type": "fix",
+              "release": "patch"
+            },
+            {
+              "type": "perf",
+              "release": "patch"
+            },
+            {
+              "type": "docs",
+              "release": "patch"
+            },
+            {
+              "type": "style",
+              "release": "patch"
+            },
+            {
+              "type": "refactor",
+              "release": "patch"
+            },
+            {
+              "type": "test",
+              "release": false
+            },
+            {
+              "type": "build",
+              "release": false
+            },
+            {
+              "type": "ci",
+              "release": false
+            },
+            {
+              "type": "chore",
+              "release": false
+            },
+            {
+              "type": "revert",
+              "release": "patch"
+            },
+            {
+              "breaking": true,
+              "release": "major"
+            }
           ],
           "parserOpts": {
-            "noteKeywords": ["BREAKING CHANGE", "BREAKING CHANGES", "BREAKING"]
+            "noteKeywords": [
+              "BREAKING CHANGE",
+              "BREAKING CHANGES",
+              "BREAKING"
+            ]
           }
         }
       ],
@@ -118,17 +167,50 @@
           "preset": "conventionalcommits",
           "presetConfig": {
             "types": [
-              { "type": "feat", "section": "✨ Features" },
-              { "type": "fix", "section": "🐛 Bug Fixes" },
-              { "type": "perf", "section": "⚡  Performance Improvements" },
-              { "type": "docs", "section": "📚 Documentation" },
-              { "type": "style", "section": "💄 Styles" },
-              { "type": "refactor", "section": "♻️ Code Refactoring" },
-              { "type": "revert", "section": "⏪ Reverts" },
-              { "type": "test", "hidden": true },
-              { "type": "build", "hidden": true },
-              { "type": "ci", "hidden": true },
-              { "type": "chore", "hidden": true }
+              {
+                "type": "feat",
+                "section": "✨ Features"
+              },
+              {
+                "type": "fix",
+                "section": "🐛 Bug Fixes"
+              },
+              {
+                "type": "perf",
+                "section": "⚡  Performance Improvements"
+              },
+              {
+                "type": "docs",
+                "section": "📚 Documentation"
+              },
+              {
+                "type": "style",
+                "section": "💄 Styles"
+              },
+              {
+                "type": "refactor",
+                "section": "♻️ Code Refactoring"
+              },
+              {
+                "type": "revert",
+                "section": "⏪ Reverts"
+              },
+              {
+                "type": "test",
+                "hidden": true
+              },
+              {
+                "type": "build",
+                "hidden": true
+              },
+              {
+                "type": "ci",
+                "hidden": true
+              },
+              {
+                "type": "chore",
+                "hidden": true
+              }
             ]
           }
         }
@@ -142,7 +224,10 @@
       [
         "@semantic-release/git",
         {
-          "assets": ["CHANGELOG.md", "package.json"],
+          "assets": [
+            "CHANGELOG.md",
+            "package.json"
+          ],
           "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
         }
       ],
