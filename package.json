@@ -1,7 +1,7 @@
 {
   "name": "dark-emerald-theme",
   "displayName": "Dark Emerald Theme",
-  "version": "1.2.3",
+  "version": "1.2.2",
   "description": "Another minimalist dark theme for Visual Studio Code",
   "private": true,
   "categories": [
