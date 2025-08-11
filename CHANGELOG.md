@@ -1,3 +1,8 @@
+## <small>1.2.2 (2025-08-11)</small>
+
+* fix: update package script and semantic-release configuration for better output and changelog manage ([7362a26](https://github.com/wilfriedago/dark-emerald-theme/commit/7362a26))
+* chore: update .vscodeignore to include additional directories and files ([3ab3de3](https://github.com/wilfriedago/dark-emerald-theme/commit/3ab3de3))
+
 ## <small>1.2.1 (2025-08-11)</small>
 
 * fix: correct commitlint rules for line length enforcement ([e9f1b10](https://github.com/wilfriedago/dark-emerald-theme/commit/e9f1b10))
