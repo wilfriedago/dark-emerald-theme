@@ -1,3 +1,8 @@
+## <small>1.2.4 (2025-08-11)</small>
+
+* fix: remove version input from workflow dispatch in publish.yml ([8d2f609](https://github.com/wilfriedago/dark-emerald-theme/commit/8d2f609))
+* fix: update publish step to use vsce command and remove dark-emerald-italics theme ([35ba3da](https://github.com/wilfriedago/dark-emerald-theme/commit/35ba3da))
+
 ## <small>1.2.3 (2025-08-11)</small>
 
 * fix: add npm plugin to semantic-release configuration to disable npm publishing ([c52f582](https://github.com/wilfriedago/dark-emerald-theme/commit/c52f582))
