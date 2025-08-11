@@ -8,11 +8,6 @@ on:
 
   # Allow manual triggering of the workflow
   workflow_dispatch:
-    inputs:
-      version:
-        description: 'Version to publish'
-        required: true
-        default: 'patch'
 
 defaults:
   run:
