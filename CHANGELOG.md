@@ -1,3 +1,11 @@
+## <small>1.2.1 (2025-08-11)</small>
+
+* fix: correct commitlint rules for line length enforcement ([e9f1b10](https://github.com/wilfriedago/dark-emerald-theme/commit/e9f1b10))
+* refactor: update semantic-release plugins to use custom release rules ([5745519](https://github.com/wilfriedago/dark-emerald-theme/commit/5745519))
+* chore: remove version specification for pnpm setup ([731e935](https://github.com/wilfriedago/dark-emerald-theme/commit/731e935))
+* chore: update .vscodeignore to include demo directory ([4ef4998](https://github.com/wilfriedago/dark-emerald-theme/commit/4ef4998))
+* chore: update workflow concurrency group and runner version ([e52cb75](https://github.com/wilfriedago/dark-emerald-theme/commit/e52cb75))
+
 # [1.2.0](https://github.com/wilfriedago/dark-emerald-theme/compare/v1.1.0...v1.2.0) (2025-08-10)
 
 
