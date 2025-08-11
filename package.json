@@ -43,16 +43,10 @@
   "contributes": {
     "themes": [
       {
-        "id": "dark-emerald",
+        "id": "Dark Emerald",
         "label": "Dark Emerald",
         "uiTheme": "vs-dark",
         "path": "./themes/dark-emerald.json"
-      },
-      {
-        "id": "dark-emerald-italics",
-        "label": "Dark Emerald Italics",
-        "uiTheme": "vs-dark",
-        "path": "./themes/dark-emerald-italics.json"
       }
     ]
   },

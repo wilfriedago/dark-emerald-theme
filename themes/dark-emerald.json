@@ -77,6 +77,7 @@
     "inputOption.activeBorder": "#059669",
     "keybindingLabel.foreground": "#CCCCCC",
     "list.activeSelectionBackground": "#022c22",
+    "list.inactiveSelectionBackground": "#1e1e1e",
     "list.dropBackground": "#151515",
     "list.errorForeground": "#f48771",
     "list.focusBackground": "#e5e5e51a",
@@ -171,6 +172,27 @@
     "widget.shadow": "#0000005c"
   },
   "tokenColors": [
+    {
+      "name": "Comments",
+      "scope": "comment,punctuation.definition.comment,comment.line.double-slash,comment.block.documentation",
+      "settings": {
+        "fontStyle": "italic"
+      }
+    },
+    {
+      "name": "comment",
+      "scope": "comment.line.double-slash,comment.block.documentation",
+      "settings": {
+        "fontStyle": "italic"
+      }
+    },
+    {
+      "name": "markup.italic.markdown",
+      "scope": "markup.italic.markdown",
+      "settings": {
+        "fontStyle": "italic"
+      }
+    },
     {
       "name": "string",
       "scope": [

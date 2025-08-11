@@ -64,9 +64,4 @@ jobs:
           skipDuplicate: true
 
       - name: 🌐 Publish to Visual Studio Marketplace
-        uses: HaaLeo/publish-vscode-extension@v2
-        with:
-          pat: ${{ secrets.VS_MARKETPLACE_TOKEN }}
-          registryUrl: https://marketplace.visualstudio.com
-          extensionFile: ${{ env.PACKAGE_NAME }}-v${{ env.PACKAGE_VERSION }}.vsix
-          skipDuplicate: true
+        run: vsce publish --skip-duplicate --githubBranch v${{ env.PACKAGE_VERSION }} --pat ${{ secrets.VS_MARKETPLACE_TOKEN }}
