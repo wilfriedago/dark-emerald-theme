@@ -4,9 +4,10 @@
 .github/
 .gitignore
 .releaserc
-/demo
-/node_modules/
-/pnpm-lock.yaml
-/src/
-/dist/
 .nvmrc
+assets/preview.png
+demo/
+node_modules/
+pnpm-lock.yaml
+src/
+dist/
