@@ -27,13 +27,14 @@ permissions:
   contents: read # for checkout
 
 concurrency:
-  group: ${{ github.job }}-${{ github.ref }}
+  group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
   release:
     name: 🚀 Create a new release
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
     permissions:
       contents: write # to be able to publish a GitHub release
       issues: write # to be able to comment on released issues
@@ -45,25 +46,27 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: 🪄 Installing pnpm
+      - name: 🪄 Setup pnpm
         uses: pnpm/action-setup@v4
         with:
+          version: 10.14.0
           run_install: false
 
-      - name: 🛑 Configure Node.js
+      - name: 🛑 Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version-file: .nvmrc
-          cache: "pnpm"
+          cache: pnpm
 
-      - name: 📥 Installing project dependencies
+      - name: 📥 Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: 📦 Building package
+      - name: 📦 Package extension
         run: pnpm package
 
-      - name: 🚀 Release a new version
+      - name: 🚀 Release
         run: pnpm release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -103,7 +103,7 @@
             {
               "label": "Dark Emerald Theme ${nextRelease.gitTag}",
               "name": "dark-emerald-theme-${nextRelease.gitTag}.vsix",
-              "path": "dark-emerald-theme-${nextRelease.gitTag}.vsix"
+              "path": "dark-emerald-theme-${lastRelease.gitTag}.vsix"
             }
           ]
         }
