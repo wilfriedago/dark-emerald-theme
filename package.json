@@ -78,7 +78,8 @@
       "@commitlint/config-conventional"
     ],
     "rules": {
-      "footer-max-line-length": [1, "always", 200]
+      "body-max-line-length": [1, "always"],
+      "footer-max-line-length": [1, "always"]
     }
   },
   "release": {
