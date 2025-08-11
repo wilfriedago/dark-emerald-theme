@@ -45,34 +45,33 @@ jobs:
         run: |
           echo "PACKAGE_NAME=$(node -p -e "require('./package.json').name")" >> $GITHUB_ENV
           echo "PACKAGE_VERSION=$(node -p -e "require('./package.json').version")" >> $GITHUB_ENV
-          echo "Package: $PACKAGE_NAME v$PACKAGE_VERSION"
 
       - name: 📥 Download release asset
         uses: robinraju/release-downloader@v1
         with:
           tag: v${{ env.PACKAGE_VERSION }}
-          fileName: ${{ env.PACKAGE_NAME }}-v${{ env.PACKAGE_VERSION }}.vsix
+          fileName: ${{ env.PACKAGE_NAME }}-${{ env.PACKAGE_VERSION }}.vsix
           out-file-path: ./
 
       - name: 🔍 Verify downloaded file
         run: |
           ls -la *.vsix
-          if [ ! -f "${{ env.PACKAGE_NAME }}-v${{ env.PACKAGE_VERSION }}.vsix" ]; then
+          if [ ! -f "${{ env.PACKAGE_NAME }}-${{ env.PACKAGE_VERSION }}.vsix" ]; then
             echo "Expected VSIX file not found!"
             exit 1
           fi
 
       - name: 🌐 Publish to Open VSX Registry
-        uses: HaaLeo/publish-vscode-extension@v1
+        uses: HaaLeo/publish-vscode-extension@v2
         with:
           pat: ${{ secrets.OPEN_VSX_TOKEN }}
-          extensionFile: ${{ env.PACKAGE_NAME }}-v${{ env.PACKAGE_VERSION }}.vsix
+          extensionFile: ${{ env.PACKAGE_NAME }}-${{ env.PACKAGE_VERSION }}.vsix
           skipDuplicate: true
 
       - name: 🌐 Publish to Visual Studio Marketplace
-        uses: HaaLeo/publish-vscode-extension@v1
+        uses: HaaLeo/publish-vscode-extension@v2
         with:
           pat: ${{ secrets.VS_MARKETPLACE_TOKEN }}
           registryUrl: https://marketplace.visualstudio.com
-          extensionFile: ${{ env.PACKAGE_NAME }}-v${{ env.PACKAGE_VERSION }}.vsix
+          extensionFile: ${{ env.PACKAGE_NAME }}-${{ env.PACKAGE_VERSION }}.vsix
           skipDuplicate: true
